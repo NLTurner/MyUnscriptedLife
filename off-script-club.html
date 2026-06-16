@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join the Off-Script Club&trade; | My Unscripted Life&trade;</title>
-<meta name="description" content="Apply to join the Off-Script Club, a community for adults in midlife and beyond who are building the life they actually want.">
+<title>The Off-Script Club&trade; | My Unscripted Life&trade;</title>
+<meta name="description" content="A monthly membership and real-world community for adults in midlife and beyond who are building the life they actually want.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -19,34 +19,177 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--body);background:var(--cream);color:var(--dark);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  h1,h2{font-family:var(--display);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+  body{font-family:var(--body);background:var(--cream);color:var(--dark);line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;letter-spacing:-.01em}
   a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  .eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--clay)}
+  .eyebrow{font-family:var(--body);font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--clay)}
+  .eyebrow.teal{color:var(--teal)}
 
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,241,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E7DBCB}
+  /* buttons */
+  .btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:.96rem;letter-spacing:.01em;
+    padding:15px 30px;border-radius:3px;border:1.5px solid var(--terra);background:var(--terra);color:var(--cream);
+    cursor:pointer;transition:background .2s ease,transform .2s ease,color .2s ease}
+  .btn:hover{background:var(--clay);border-color:var(--clay);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--clay)}
+  .btn.ghost:hover{background:var(--clay);color:var(--cream)}
+  .btn.onteal{background:var(--cream);border-color:var(--cream);color:var(--teal-deep)}
+  .btn.onteal:hover{background:transparent;color:var(--cream);border-color:var(--cream)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E7DBCB}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
   .logo{display:inline-flex;align-items:center}
   .logo svg{height:30px;width:auto;display:block}
+  .logo sup{font-size:.55em;font-weight:500}
   .nav-links{display:flex;align-items:center;gap:30px}
   .nav-links a.lnk{font-size:.92rem;font-weight:500;color:var(--grey);transition:color .2s}
   .nav-links a.lnk:hover{color:var(--clay)}
+  .nav-cta{padding:10px 20px;font-size:.86rem}
   .menu-btn{display:none;background:none;border:0;font-size:1.6rem;color:var(--dark);cursor:pointer}
 
-  .intro{padding:80px 0 24px;text-align:center}
-  .intro h1{font-size:clamp(2.6rem,6vw,4rem);margin:16px 0 0}
-  .intro .lead{font-size:1.12rem;color:var(--grey);max-width:36em;margin:24px auto 0}
+  /* hero */
+  .hero{padding:84px 0 92px}
+  .hero-inner{max-width:780px}
+  .hero h1{font-size:clamp(2.9rem,6vw,4.6rem);margin:18px 0 0}
+  .struck{position:relative;color:var(--grey);font-style:italic;font-weight:500;white-space:nowrap}
+  .struck svg{position:absolute;left:-2%;top:50%;width:104%;height:18px;transform:translateY(-46%);overflow:visible}
+  .struck svg path{stroke:var(--clay);stroke-width:3;fill:none;stroke-linecap:round;
+    stroke-dasharray:340;stroke-dashoffset:340;animation:draw 1.1s .55s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .hero h1 .reveal{display:block;color:var(--terra)}
+  .hero-sub{font-size:1.12rem;color:var(--grey);max-width:30em;margin:26px 0 32px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero-note{font-size:.82rem;color:var(--grey);margin-top:22px;font-style:italic;font-family:var(--display);font-size:1.05rem}
 
-  .apply{padding:30px 0 90px}
+  .portrait{position:relative;border-radius:5px;overflow:hidden;min-height:440px;
+    background:linear-gradient(150deg,var(--sand) 0%,var(--terra) 58%,var(--clay) 100%);
+    display:flex;align-items:flex-end;box-shadow:0 30px 60px -28px rgba(44,24,16,.5)}
+  .portrait .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:rgba(251,248,244,.85);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:20px}
+  .portrait blockquote{position:relative;margin:0;padding:26px 26px 28px;background:linear-gradient(transparent,rgba(44,24,16,.62));
+    color:var(--cream);font-family:var(--display);font-size:1.5rem;font-weight:500;line-height:1.25;width:100%}
+
+  /* generic section */
+  section{padding:88px 0}
+  .sec-linen{background:var(--linen)}
+  .lead{font-size:1.04rem;color:var(--grey)}
+  h2.title{font-size:clamp(2rem,4vw,2.9rem);margin:14px 0 0}
+
+  /* story */
+  .story-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px;align-items:center}
+  .story-photo img{width:100%;border-radius:6px;object-fit:cover;box-shadow:0 26px 50px -26px rgba(42,31,43,.55)}
+  .story p{margin-top:18px;font-size:1.06rem;color:#473A30}
+  .story .sign{margin-top:26px;font-family:var(--display);font-size:1.45rem;color:var(--clay)}
+  .story .sign small{display:block;font-family:var(--body);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-top:4px}
+
+  /* path */
+  .path-list{margin-top:46px;border-top:1px solid #E0D2BE}
+  .step{display:grid;grid-template-columns:30px 1fr auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid #E0D2BE;transition:background .25s}
+  .step:hover{background:rgba(193,96,58,.05)}
+  .step .num{font-size:.8rem;color:var(--sand);position:relative;top:-3px}
+  .step .body h3{font-size:1.5rem}
+  .step .body p{color:var(--grey);font-size:.98rem;margin-top:4px;max-width:42em}
+  .step .price{font-family:var(--body);font-weight:600;font-size:.9rem;color:var(--clay);white-space:nowrap;text-align:right}
+  .step .price span{display:block;font-weight:400;font-size:.76rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
+
+  /* club */
+  .club{background:var(--teal-deep);color:var(--mist)}
+  .club .title{color:var(--cream)}
+  .club .lead{color:rgba(246,241,233,.8)}
+  .club-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;margin-top:38px;align-items:start}
+  .club ul{list-style:none;margin-top:6px}
+  .club li{padding:11px 0 11px 30px;position:relative;border-bottom:1px solid rgba(246,241,233,.16);font-size:1.02rem}
+  .club li:before{content:"";position:absolute;left:0;top:18px;width:11px;height:11px;border:2px solid var(--sand);border-radius:50%}
+  .price-card{background:rgba(246,241,233,.07);border:1px solid rgba(246,241,233,.22);border-radius:6px;padding:34px}
+  .price-card .big{font-family:var(--display);font-size:3rem;font-weight:600;color:var(--cream);line-height:1}
+  .price-card .big span{font-family:var(--body);font-size:1rem;font-weight:400;color:rgba(246,241,233,.7)}
+  .price-card .alt{margin-top:8px;color:rgba(246,241,233,.78);font-size:.96rem}
+  .price-card .founding{margin-top:18px;padding-top:18px;border-top:1px solid rgba(246,241,233,.2);font-size:.92rem;color:var(--sand)}
+  .price-card .btn{margin-top:24px;width:100%;text-align:center}
+  .club .ident{margin-top:30px;font-family:var(--display);font-style:italic;font-size:1.7rem;color:var(--sand)}
+
+  /* fit */
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:40px}
+  .fit-card{background:var(--cream);border:1px solid #E7DBCB;border-radius:6px;padding:32px}
+  .fit-card.no{background:transparent;border-style:dashed}
+  .fit-card h3{font-size:1.4rem;margin-bottom:14px}
+  .fit-card.yes h3{color:var(--teal)}
+  .fit-card.no h3{color:var(--clay)}
+  .fit-card li{list-style:none;padding:9px 0 9px 26px;position:relative;color:#473A30}
+  .fit-card.yes li:before{content:"\2713";position:absolute;left:0;color:var(--teal);font-weight:700}
+  .fit-card.no li:before{content:"\2715";position:absolute;left:0;color:var(--clay)}
+
+  /* faq */
+  .faq{max-width:780px;margin:40px auto 0}
+  .q{border-bottom:1px solid #E0D2BE}
+  .q button{width:100%;background:none;border:0;text-align:left;padding:22px 40px 22px 0;position:relative;cursor:pointer;
+    font-family:var(--display);font-size:1.4rem;font-weight:600;color:var(--dark)}
+  .q button:after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-family:var(--body);font-size:1.6rem;color:var(--terra);transition:transform .25s}
+  .q button[aria-expanded="true"]:after{transform:translateY(-50%) rotate(45deg)}
+  .q .a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .q .a p{padding:0 0 22px;color:var(--grey);font-size:1.02rem}
+
+  /* final + footer */
+  .final{text-align:center;background:var(--linen)}
+  .final h2{font-size:clamp(2.2rem,4.5vw,3.3rem);max-width:14em;margin:14px auto 26px}
+  footer{background:var(--dark);color:#CDBBA8;padding:64px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.3fr;gap:40px}
+  footer .logo{color:var(--cream)}
+  footer p{font-size:.94rem;margin-top:14px;color:#B8A691;max-width:24em}
+  footer h4{font-family:var(--body);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:14px}
+  footer a.fl{display:block;color:#CDBBA8;font-size:.96rem;padding:5px 0;transition:color .2s}
+  footer a.fl:hover{color:var(--cream)}
+  .signup{display:flex;gap:8px;margin-top:12px}
+  .signup input{flex:1;background:rgba(255,255,255,.06);border:1px solid #4A3A2E;border-radius:3px;padding:11px 13px;color:var(--cream);font-family:var(--body);font-size:.92rem}
+  .signup input::placeholder{color:#8A7765}
+  .signup button{background:var(--terra);border:0;border-radius:3px;color:var(--cream);font-family:var(--body);font-weight:600;padding:0 18px;cursor:pointer}
+  .foot-bottom{margin-top:46px;padding-top:22px;border-top:1px solid #4A3A2E;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#8A7765}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  @media (max-width:880px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:18px;background:var(--cream);padding:24px 28px;border-bottom:1px solid #E7DBCB}
+    .menu-btn{display:block}
+    .hero-grid,.story-grid,.club-grid,.fit-grid,.foot-grid{grid-template-columns:1fr}
+    .portrait{min-height:340px;order:-1}
+    .hero h1{font-size:clamp(1.85rem,8vw,2.8rem)}
+    .struck{font-size:.92em}
+    .step{grid-template-columns:22px 1fr;gap:16px}
+    .step .price{grid-column:2;text-align:left;margin-top:8px}
+    section{padding:64px 0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .rv{opacity:1;transform:none;transition:none}
+    .struck svg path{stroke-dashoffset:0}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---- subpage additions ---- */
+  .intro{padding:80px 0 8px;text-align:center}
+  .intro h1{font-size:clamp(2.6rem,6vw,4rem);margin:16px 0 0}
+  .intro .lead{font-size:1.14rem;color:var(--grey);max-width:40em;margin:24px auto 0}
+  .deliverable{margin:22px auto 0;max-width:34em;font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--clay);line-height:1.3}
+  .three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:42px}
+  .feature-card{background:var(--cream);border:1px solid #E7DBCB;border-radius:6px;padding:30px 26px}
+  .feature-card h3{font-size:1.32rem;margin-bottom:10px}
+  .feature-card p{color:var(--grey);font-size:.98rem}
+  .detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;margin-top:36px;max-width:760px}
+  .detail{border-top:1px solid #E0D2BE;padding-top:14px}
+  .detail .k{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand)}
+  .detail .v{font-size:1.06rem;margin-top:5px;color:#473A30}
+  .apply{padding:34px 0 92px}
   .form-card{max-width:680px;margin:0 auto;background:#FBF7F1;border:1px solid #E7DBCB;border-radius:14px;padding:44px 40px;box-shadow:0 1px 3px rgba(42,31,43,.04)}
   .field{margin-bottom:26px}
   .field:last-of-type{margin-bottom:0}
   label{display:block;font-weight:600;font-size:.98rem;color:var(--dark);margin-bottom:8px}
   label .opt{font-weight:400;font-style:italic;color:var(--grey);font-size:.9rem}
-  input[type=text],input[type=email],textarea{
-    width:100%;background:#fff;border:1px solid #DBCBB8;border-radius:6px;
-    padding:13px 14px;font-family:var(--body);font-size:1rem;color:var(--dark);transition:border-color .18s,box-shadow .18s}
+  input[type=text],input[type=email],textarea{width:100%;background:#fff;border:1px solid #DBCBB8;border-radius:6px;padding:13px 14px;font-family:var(--body);font-size:1rem;color:var(--dark);transition:border-color .18s,box-shadow .18s}
   textarea{resize:vertical;min-height:96px;line-height:1.55}
   input:focus,textarea:focus{outline:none;border-color:var(--terra);box-shadow:0 0 0 3px rgba(162,74,99,.12)}
   .radios{display:flex;flex-direction:column;gap:10px;margin-top:4px}
@@ -56,39 +199,12 @@
   .radio span{font-size:.98rem;color:var(--dark)}
   .radio.sel{border-color:var(--terra);background:rgba(162,74,99,.04)}
   .submit{margin-top:34px;text-align:center}
-  .btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:1rem;letter-spacing:.01em;
-    padding:15px 38px;border-radius:3px;border:1.5px solid var(--terra);background:var(--terra);color:var(--cream);
-    cursor:pointer;transition:background .2s ease,transform .2s ease}
-  .btn:hover{background:var(--clay);border-color:var(--clay);transform:translateY(-2px)}
   .formnote{text-align:center;font-size:.86rem;color:var(--grey);margin-top:18px;font-style:italic}
-
   .thanks{display:none;max-width:680px;margin:0 auto;text-align:center;background:#FBF7F1;border:1px solid #E7DBCB;border-radius:14px;padding:60px 40px}
   .thanks h2{font-size:2.2rem;color:var(--clay)}
-  .thanks p{font-size:1.08rem;color:var(--grey);max-width:30em;margin:18px auto 0}
+  .thanks p{font-size:1.08rem;color:var(--grey);max-width:32em;margin:18px auto 0}
   .thanks .btn{margin-top:30px}
-
-  footer{background:var(--dark);color:#CDBBA8;padding:60px 0 28px;margin-top:30px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.3fr;gap:40px}
-  footer .flogo{font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--cream)}
-  footer .flogo sup{font-size:.55em;font-weight:500}
-  footer p{font-size:.94rem;margin-top:14px;color:#B8A691;max-width:24em}
-  footer h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:14px}
-  footer a.fl{display:block;color:#CDBBA8;font-size:.96rem;padding:5px 0;transition:color .2s}
-  footer a.fl:hover{color:var(--cream)}
-  .signup{display:flex;gap:8px;margin-top:12px}
-  .signup input{flex:1;background:rgba(255,255,255,.06);border:1px solid #4A3A2E;border-radius:3px;padding:11px 13px;color:var(--cream);font-family:var(--body);font-size:.92rem}
-  .signup input::placeholder{color:#8A7765}
-  .signup button{background:var(--terra);border:0;border-radius:3px;color:var(--cream);font-family:var(--body);font-weight:600;padding:0 18px;cursor:pointer}
-  .foot-bottom{margin-top:46px;padding-top:22px;border-top:1px solid #4A3A2E;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#8A7765}
-
-  @media (max-width:880px){
-    .nav-links{display:none}
-    .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:18px;background:var(--cream);padding:24px 28px;border-bottom:1px solid #E7DBCB}
-    .menu-btn{display:block}
-    .foot-grid{grid-template-columns:1fr}
-    .form-card{padding:34px 22px}
-  }
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  @media (max-width:880px){.three-grid{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}.form-card{padding:34px 22px}}
 </style>
 </head>
 <body>
@@ -99,7 +215,7 @@
     <nav class="nav-links" id="menu">
       <a class="lnk" href="index.html#story">The Story</a>
       <a class="lnk" href="index.html#path">The Path</a>
-      <a class="lnk" href="index.html#club">The Off-Script Club</a>
+      <a class="lnk" href="unscripted-intensive.html">The Unscripted Intensive</a>
       <a class="lnk" href="index.html">Home</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
@@ -107,72 +223,153 @@
 </header>
 
 <section class="intro">
-  <div class="wrap">
+  <div class="wrap rv in">
     <span class="eyebrow">The Off-Script Club</span>
-    <h1>Request your place.</h1>
-    <p class="lead">The Off-Script Club is a small, intentional community for adults in midlife and beyond who are done living the life they were handed. Membership opens in waves, and this is how you let me know you want in. Tell me a little about where you are, and I will reach out as places open.</p>
+    <h1>A room of your own people.</h1>
+    <p class="lead">A monthly membership for adults in midlife and beyond who are building the life they actually want, and who would rather not do it alone. Part private community, part live time with me, part real gatherings you can drive to. This is where the work keeps going after the spark.</p>
   </div>
 </section>
 
-<section class="apply">
+<section class="club">
   <div class="wrap">
-    <form class="form-card" id="clubForm" action="https://formspree.io/f/mojzrjyw" method="POST">
-      <input type="hidden" name="_subject" value="Off-Script Club waitlist application">
+    <div class="rv" style="max-width:42em">
+      <span class="eyebrow teal">What you get</span>
+      <h2 class="title">Company, a method, and momentum.</h2>
+      <p class="lead" style="margin-top:14px">Not another feed to scroll. A small, tended community with real programming and real accountability, built around the same method that runs everything here.</p>
+    </div>
+    <div class="club-grid">
+      <div class="rv">
+        <ul>
+          <li>A monthly live session with me, recorded so you never miss it</li>
+          <li>A private community that holds you accountable, not just company</li>
+          <li>Monthly prompts and themes built on the Inside-Out Transformation Framework&trade;</li>
+          <li>Member spotlights, seasonal programming, and a place to be seen</li>
+          <li>First access and a member rate on every in-person gathering</li>
+        </ul>
+      </div>
+      <div class="price-card rv">
+        <div class="big">$49<span> / month</span></div>
+        <div class="alt">or $497 / year (two months free)</div>
+        <div class="founding">Founding rate, first 50 members: $39 / month or $397 / year.</div>
+        <a class="btn onteal" href="#apply">Apply to join</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-linen">
+  <div class="wrap">
+    <div class="rv" style="max-width:40em">
+      <span class="eyebrow">In person</span>
+      <h2 class="title">We come off the screen, too.</h2>
+      <p class="lead" style="margin-top:14px">Belonging is hard to feel through a webcam. So the Club gathers in real life on a regular basis, and grows outward from there.</p>
+    </div>
+    <div class="three-grid">
+      <div class="feature-card rv">
+        <h3>Local gatherings</h3>
+        <p>Casual, regular meetups around the DMV that I host in person. Included with your membership, so you have a standing invitation to a room of people who get it.</p>
+      </div>
+      <div class="feature-card rv">
+        <h3>Day-events &amp; retreats</h3>
+        <p>Bigger experiences a few times a year that members travel in for. Ticketed on their own, with member pricing and first access before anyone else.</p>
+      </div>
+      <div class="feature-card rv">
+        <h3>Member-led meetups</h3>
+        <p>As the Club grows, members host their own gatherings in their own cities. Belonging that follows you home, wherever home is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rv" style="max-width:40em">
+      <span class="eyebrow">Fit</span>
+      <h2 class="title">Who this is really for.</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card yes rv">
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You have done everything right and still feel far from yourself</li>
+          <li>You are done performing a life you did not choose</li>
+          <li>You want a method and a community, not another motivational quote</li>
+          <li>You believe it is never too late, even on the days it does not feel that way</li>
+        </ul>
+      </div>
+      <div class="fit-card no rv">
+        <h3>This is not for you if</h3>
+        <ul>
+          <li>You are looking for a quick fix or a five-step hack</li>
+          <li>You want someone to hand you the answers</li>
+          <li>You are not ready to look squarely at where you actually are</li>
+          <li>You want to stay exactly as you are and feel better about it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-linen">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:36em;margin:0 auto">
+      <span class="eyebrow">Questions</span>
+      <h2 class="title">Good things to ask.</h2>
+    </div>
+    <div class="faq">
+      <div class="q rv"><button aria-expanded="false">Do I have to live in the DMV to join?</button><div class="a"><p>No. The online community is the heart of the Club and works from anywhere. The local gatherings are a bonus for members nearby, and member-led meetups are opening up in other cities as we grow.</p></div></div>
+      <div class="q rv"><button aria-expanded="false">How often are the in-person gatherings?</button><div class="a"><p>Regularly through the year. Local meetups are casual and included in your membership. The larger day-events and retreats are ticketed on their own, and members get first access and a member rate.</p></div></div>
+      <div class="q rv"><button aria-expanded="false">Can I cancel anytime?</button><div class="a"><p>Yes. Monthly membership is month to month, and you can step away whenever you need to.</p></div></div>
+      <div class="q rv"><button aria-expanded="false">What happens after I apply?</button><div class="a"><p>Membership opens in waves. I read every application myself and reach out as places open, so the room stays the right size and the right people.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:36em;margin:0 auto 36px">
+      <span class="eyebrow">Join</span>
+      <h2 class="title">Apply for your place.</h2>
+    </div>
+    <!-- Conversion: posts to your Formspree inbox. When your Skool checkout is live, point the price-card button straight to the Skool join URL instead. -->
+    <form class="form-card js-formspree" id="clubForm" data-thanks="thanksMsg" action="https://formspree.io/f/mojzrjyw" method="POST">
+      <input type="hidden" name="_subject" value="Off-Script Club application">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-      <div class="field">
-        <label for="firstName">First name</label>
-        <input type="text" id="firstName" name="First name" required>
-      </div>
-
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" required>
-      </div>
-
-      <div class="field">
-        <label for="why">What made you want to join the Off-Script Club?</label>
-        <textarea id="why" name="What made you want to join" required></textarea>
-      </div>
-
+      <div class="field"><label for="firstName">First name</label><input type="text" id="firstName" name="First name" required></div>
+      <div class="field"><label for="email">Email</label><input type="email" id="email" name="Email" required></div>
+      <div class="field"><label for="why">What made you want to join the Off-Script Club?</label><textarea id="why" name="What made you want to join" required></textarea></div>
       <div class="field">
         <label>Where are you right now?</label>
-        <div class="radios" id="stageGroup">
+        <div class="radios">
           <label class="radio"><input type="radio" name="Where are you right now" value="Just starting to ask the questions" required><span>Just starting to ask the questions</span></label>
           <label class="radio"><input type="radio" name="Where are you right now" value="In the middle of figuring it out"><span>In the middle of figuring it out</span></label>
-          <label class="radio"><input type="radio" name="Where are you right now" value="Actively rebuilding my life"><span>Actively rebuilding my life</span></label>
+          <label class="radio"><input type="radio" name="Where are you right now" value="Actively building my next chapter"><span>Actively building my next chapter</span></label>
           <label class="radio"><input type="radio" name="Where are you right now" value="Not sure yet"><span>Not sure yet</span></label>
         </div>
       </div>
-
-      <div class="field">
-        <label for="hoping">What are you hoping to find in a community like this?</label>
-        <textarea id="hoping" name="What are you hoping to find" required></textarea>
-      </div>
-
-      <div class="field">
-        <label for="anything">Anything else you want me to know? <span class="opt">(optional)</span></label>
-        <textarea id="anything" name="Anything else"></textarea>
-      </div>
-
-      <div class="submit">
-        <button type="submit" class="btn">Request my place</button>
-        <p class="formnote">Membership opens in waves. I read every application personally.</p>
-      </div>
+      <div class="field"><label for="anything">Anything else you want me to know? <span class="opt">(optional)</span></label><textarea id="anything" name="Anything else"></textarea></div>
+      <div class="submit"><button type="submit" class="btn">Request my place</button><p class="formnote">Membership opens in waves. I read every application personally.</p></div>
     </form>
-
     <div class="thanks" id="thanksMsg">
-      <h2>Your request is in.</h2>
+      <h2>Your application is in.</h2>
       <p>Thank you for sharing where you are. The Off-Script Club opens in waves, and I will reach out as places become available. In the meantime, there is more waiting for you.</p>
       <a class="btn" href="index.html">Back to My Unscripted Life</a>
     </div>
   </div>
 </section>
 
+<section class="final">
+  <div class="wrap rv">
+    <span class="eyebrow">A standing invitation</span>
+    <h2>It is never too late to become who you actually want to be.</h2>
+    <a class="btn" href="#apply">Apply to join the Club</a>
+  </div>
+</section>
+
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <a href="index.html" class="flogo">My Unscripted Life<sup>&trade;</sup></a>
+      <a href="index.html" class="logo" style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--cream)">My Unscripted Life<sup style="font-size:.55em;font-weight:500">&trade;</sup></a>
       <p>Stop living the life you were handed. Start building the one you actually want.</p>
     </div>
     <div>
@@ -184,10 +381,7 @@
     <div>
       <h4>The letters</h4>
       <p style="margin-top:0">Notes on becoming who you actually are, straight to your inbox.</p>
-      <form class="signup" onsubmit="return false">
-        <input type="email" placeholder="Your email" aria-label="Your email">
-        <button type="submit">Join</button>
-      </form>
+      <iframe src="https://stillnotdone.substack.com/embed" title="Subscribe to Not Done Yet" style="width:100%;max-width:480px;height:150px;border:1px solid #EEE;background:#fff;border-radius:6px;margin-top:12px" frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
   <div class="wrap foot-bottom">
@@ -198,37 +392,35 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-
   var mb=document.getElementById('menuBtn'), menu=document.getElementById('menu');
-  mb.addEventListener('click',function(){var o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
-  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
-
-  // highlight selected radio
-  document.querySelectorAll('#stageGroup .radio').forEach(function(r){
-    r.addEventListener('click',function(){
-      document.querySelectorAll('#stageGroup .radio').forEach(function(x){x.classList.remove('sel');});
-      r.classList.add('sel');
+  if(mb&&menu){
+    mb.addEventListener('click',function(){var o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
+  }
+  document.querySelectorAll('.radios').forEach(function(g){
+    g.querySelectorAll('.radio').forEach(function(r){
+      r.addEventListener('click',function(){g.querySelectorAll('.radio').forEach(function(x){x.classList.remove('sel');});r.classList.add('sel');});
     });
   });
-
-  // submit via fetch so we can show inline thank-you
-  var form=document.getElementById('clubForm');
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var data=new FormData(form);
-    fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
-      .then(function(res){
-        if(res.ok){
-          form.style.display='none';
-          document.getElementById('thanksMsg').style.display='block';
-          window.scrollTo({top:0,behavior:'smooth'});
-        } else {
-          alert('Something went wrong sending your request. Please try again, or email nicole@nicolelturner.com.');
-        }
-      })
-      .catch(function(){
-        alert('Something went wrong sending your request. Please try again, or email nicole@nicolelturner.com.');
-      });
+  document.querySelectorAll('.q button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var open=b.getAttribute('aria-expanded')==='true';var panel=b.nextElementSibling;
+      b.setAttribute('aria-expanded',!open);panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!rm){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.rv:not(.in)').forEach(function(el){io.observe(el);});
+  }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});}
+  document.querySelectorAll('form.js-formspree').forEach(function(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();var data=new FormData(form);
+      fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+        .then(function(res){
+          if(res.ok){form.style.display='none';var t=document.getElementById(form.getAttribute('data-thanks'));if(t)t.style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+          else{alert('Something went wrong. Please try again, or email nicole@nicolelturner.com.');}
+        }).catch(function(){alert('Something went wrong. Please try again, or email nicole@nicolelturner.com.');});
+    });
   });
 </script>
 </body>
